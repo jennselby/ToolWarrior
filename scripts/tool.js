@@ -59,12 +59,29 @@ var tool = (function() {
     }
 
     function setup() {
-        console.log("Success!");
+        tool.showScreen("splash-screen");
     }
 
+    // hide the active screen (if any) and show the screen
+    // with the specified ide
+    function showScreen(screenId) {
+        var dom = tool.dom;
+        var $ = dom.$;
+
+        var activeScreen = $("#game .screen.active")[0];
+        if (activeScreen) {
+            dom.removeClass(activeScreen, "active");
+        }
+
+        var screen = $("#" + screenId)[0];
+        dom.addClass(screen, "active");
+    }
+
+    // expose public methods
     return {
         load: load,
-        setup: setup
+        setup: setup,
+        showScreen: showScreen
     };
 
 })();
