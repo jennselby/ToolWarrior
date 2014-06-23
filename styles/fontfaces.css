@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "Lobster";
+    font-weight: normal;
+    font-style: normal;
+    src: url("../fonts/Lobster/Lobster.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Yanone Kaffeesatz";
+    font-weight: normal;
+    font-style: normal;
+    src: url("../fonts/Yanone_Kaffeesatz/YanoneKaffeesatz-Regular.ttf") format("truetype");
+}
