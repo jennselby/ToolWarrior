@@ -7,8 +7,8 @@ tool.dom = (function() {
     }
 
     function hasClass(el, clsName) {
-        var regex = new RegExp(("(^|\\s)" + clsName + "(\\s|$)");
-        return regex.text(el.className);
+        var regex = new RegExp("(^|\\s)" + clsName + "(\\s|$)");
+        return regex.test(el.className);
     }
     
     function addClass(el, clsName) {
@@ -24,7 +24,7 @@ tool.dom = (function() {
 
     return {
         $: $,
-        hasClass: hassClass,
+        hasClass: hasClass,
         addClass: addClass,
         removeClass: removeClass
     };
