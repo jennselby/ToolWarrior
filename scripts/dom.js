@@ -22,11 +22,19 @@ tool.dom = (function() {
         el.className = el.className.replace(regex, " ");
     }
 
+    function bind(element, event, handler) {
+        if (typeof element === "string") {
+            element = $(element)[0];
+        }
+        element.addEventListener(event, handler, false);
+    }
+
     return {
         $: $,
         hasClass: hasClass,
         addClass: addClass,
-        removeClass: removeClass
+        removeClass: removeClass,
+        bind: bind
     };
 
 })();

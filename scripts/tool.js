@@ -69,19 +69,25 @@ var tool = (function() {
         var $ = dom.$;
 
         var activeScreen = $("#game .screen.active")[0];
+        if (!tool.screens[screenId]) {
+            console.error("The " + screenId + " module is not yet implemented");
+            return;
+        }
         if (activeScreen) {
             dom.removeClass(activeScreen, "active");
         }
 
         var screen = $("#" + screenId)[0];
         dom.addClass(screen, "active");
+        tool.screens[screenId].run();
     }
 
     // expose public methods
     return {
         load: load,
         setup: setup,
-        showScreen: showScreen
+        showScreen: showScreen,
+        screens: {}
     };
 
 })();
